@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Systematic Bacteriology | Staphylococci</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #172033;
+}
+
+header {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    margin: 10px 0 0;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px 50px;
+}
+
+.progress {
+    background: white;
+    padding: 18px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.progress-bar {
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 20%;
+    height: 100%;
+    background: #2563eb;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tabs button {
+    border: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    color: #334155;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.tabs button.active {
+    background: #2563eb;
+    color: white;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.07);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #1d4ed8;
+}
+
+.card h3 {
+    color: #334155;
+}
+
+.highlight {
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    padding: 14px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.memory {
+    background: #fef3c7;
+    border-left: 5px solid #f59e0b;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+th, td {
+    border: 1px solid #dbe3ef;
+    padding: 11px;
+    text-align: left;
+}
+
+th {
+    background: #eff6ff;
+}
+
+ul, ol {
+    line-height: 1.7;
+}
+
+.flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.flow span {
+    background: #dbeafe;
+    padding: 10px 13px;
+    border-radius: 9px;
+    font-weight: bold;
+}
+
+.arrow {
+    background: none !important;
+    padding: 0 !important;
+}
+
+.quiz-question {
+    margin-bottom: 22px;
+}
+
+.quiz-question label {
+    display: block;
+    background: #f8fafc;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.quiz-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    .card {
+        padding: 17px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🧫 Systematic Bacteriology</h1>
+    <p>Unit I • Topic 1 — Staphylococci</p>
+</header>
+
+<div class="container">
+
+<div class="progress">
+    <strong>Unit I Progress: 1 / 5</strong>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<div class="tabs">
+    <button class="active" onclick="showSection('overview', this)">Overview</button>
+    <button onclick="showSection('morphology', this)">Morphology</button>
+    <button onclick="showSection('culture', this)">Culture</button>
+    <button onclick="showSection('biochem', this)">Biochemistry</button>
+    <button onclick="showSection('pathogenesis', this)">Pathogenesis</button>
+    <button onclick="showSection('diseases', this)">Diseases</button>
+    <button onclick="showSection('diagnosis', this)">Lab Diagnosis</button>
+    <button onclick="showSection('quiz', this)">Quiz</button>
+</div>
+
+<!-- OVERVIEW -->
+
+<section id="overview" class="section active">
+
+<div class="card">
+<h2>🧫 What are Staphylococci?</h2>
+
+<p>
+Staphylococci are <strong>Gram-positive cocci</strong> that usually occur
+in irregular clusters resembling a bunch of grapes.
+</p>
+
+<div class="highlight">
+<strong>Simple idea:</strong><br>
+Staphylococci = Round bacteria + Grape-like clusters + Catalase positive
+</div>
+
+<h3>Important examples</h3>
+
+<ul>
+<li><strong>Staphylococcus aureus</strong> — important pathogen</li>
+<li><strong>Staphylococcus epidermidis</strong> — associated with medical devices</li>
+<li><strong>Staphylococcus saprophyticus</strong> — important cause of UTI</li>
+</ul>
+
+<div class="memory">
+<strong>🧠 Memory Trick:</strong><br>
+<strong>STAPH = “Stacks/Clusters + Catalase +”</strong>
+</div>
+</div>
+
+<div class="card">
+<h2>📚 Topics to Learn</h2>
+
+<ol>
+<li>Morphology</li>
+<li>Cultural characteristics</li>
+<li>Biochemical reactions</li>
+<li>Pathogenesis</li>
+<li>Diseases caused</li>
+<li>Laboratory diagnosis</li>
+</ol>
+</div>
+
+</section>
+
+
+<!-- MORPHOLOGY -->
+
+<section id="morphology" class="section">
+
+<div class="card">
+<h2>🔬 Morphology</h2>
+
+<table>
+<tr>
+<th>Feature</th>
+<th>Staphylococci</th>
+</tr>
+
+<tr>
+<td>Gram reaction</td>
+<td>Gram-positive</td>
+</tr>
+
+<tr>
+<td>Shape</td>
+<td>Cocci (round)</td>
+</tr>
+
+<tr>
+<td>Arrangement</td>
+<td>Irregular grape-like clusters</td>
+</tr>
+
+<tr>
+<td>Motility</td>
+<td>Non-motile</td>
+</tr>
+
+<tr>
+<td>Spore</td>
+<td>Non-spore forming</td>
+</tr>
+
+<tr>
+<td>Size</td>
+<td>Approximately 0.5–1.5 µm</td>
+</tr>
+
+<tr>
+<td>Oxygen requirement</td>
+<td>Facultative anaerobe</td>
+</tr>
+</table>
+
+<div class="highlight">
+<strong>Under microscope:</strong><br>
+Purple, round cocci arranged in grape-like clusters.
+</div>
+
+<div class="memory">
+🧠 <strong>Remember:</strong>
+<strong>Gram + → Cocci → Clusters</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CULTURE -->
+
+<section id="culture" class="section">
+
+<div class="card">
+
+<h2>🧫 Cultural Characteristics</h2>
+
+<p>
+Staphylococci are relatively easy to grow compared with many fastidious
+bacteria.
+</p>
+
+<h3>On ordinary media</h3>
+
+<ul>
+<li>Grow readily.</li>
+<li>Colonies are usually round.</li>
+<li>Colonies are smooth and raised.</li>
+<li>Colonies are opaque.</li>
+</ul>
+
+<h3>On Blood Agar</h3>
+
+<ul>
+<li>Colonies may show haemolysis.</li>
+<li><strong>S. aureus</strong> commonly shows beta-haemolysis.</li>
+<li>S. aureus may produce golden-yellow pigment.</li>
+</ul>
+
+<h3>On Mannitol Salt Agar (MSA)</h3>
+
+<p>
+MSA contains high salt concentration, which selects for
+salt-tolerant organisms such as Staphylococci.
+</p>
+
+<p>
+<strong>S. aureus</strong> commonly ferments mannitol and produces acid,
+turning the medium <strong>yellow</strong>.
+</p>
+
+<div class="memory">
+🧠 <strong>MSA = Salt + Mannitol</strong><br><br>
+Salt → selects Staphylococci<br>
+Mannitol fermentation by S. aureus → Yellow
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BIOCHEM -->
+
+<section id="biochem" class="section">
+
+<div class="card">
+
+<h2>⚗️ Biochemical Reactions</h2>
+
+<table>
+
+<tr>
+<th>Test</th>
+<th>Typical result</th>
+<th>Importance</th>
+</tr>
+
+<tr>
+<td>Catalase</td>
+<td>Positive</td>
+<td>Separates Staphylococci from Streptococci</td>
+</tr>
+
+<tr>
+<td>Oxidase</td>
+<td>Usually negative</td>
+<td>Useful identification test</td>
+</tr>
+
+<tr>
+<td>Coagulase</td>
+<td>Species dependent</td>
+<td>S. aureus is usually positive</td>
+</tr>
+
+<tr>
+<td>DNase</td>
+<td>Usually positive in S. aureus</td>
+<td>Supports identification of S. aureus</td>
+</tr>
+
+<tr>
+<td>Mannitol fermentation</td>
+<td>Variable</td>
+<td>S. aureus usually positive</td>
+</tr>
+
+<tr>
+<td>Glucose fermentation</td>
+<td>Generally positive</td>
+<td>Usually without gas</td>
+</tr>
+
+</table>
+
+<h3>⭐ Catalase Test</h3>
+
+<p>
+Catalase breaks down hydrogen peroxide.
+</p>
+
+<p>
+<strong>H₂O₂ → H₂O + O₂</strong>
+</p>
+
+<p>
+Oxygen produces visible <strong>bubbles</strong>.
+</p>
+
+<div class="highlight">
+Staphylococci = <strong>Catalase Positive → Bubbles</strong>
+</div>
+
+<h3>⭐ Coagulase Test</h3>
+
+<p>
+Coagulase causes plasma to clot.
+</p>
+
+<p>
+<strong>S. aureus → usually coagulase positive.</strong>
+</p>
+
+<div class="memory">
+🧠 <strong>High-yield:</strong><br>
+Catalase + → Staphylococcus<br>
+Coagulase + → strongly suggests S. aureus
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PATHOGENESIS -->
+
+<section id="pathogenesis" class="section">
+
+<div class="card">
+
+<h2>🦠 Pathogenesis</h2>
+
+<p>
+Pathogenesis means <strong>how the organism produces disease</strong>.
+</p>
+
+<div class="flow">
+
+<span>Colonization</span>
+<span class="arrow">→</span>
+<span>Entry through wound</span>
+<span class="arrow">→</span>
+<span>Attachment</span>
+<span class="arrow">→</span>
+<span>Multiplication</span>
+<span class="arrow">→</span>
+<span>Inflammation</span>
+<span class="arrow">→</span>
+<span>Disease</span>
+
+</div>
+
+<h3>Step 1 — Colonization</h3>
+
+<p>
+Staphylococci may normally live on the skin and in the nose without
+causing disease.
+</p>
+
+<h3>Step 2 — Entry</h3>
+
+<p>
+They can enter through cuts, wounds, burns, surgical sites or damaged
+skin.
+</p>
+
+<h3>Step 3 — Multiplication</h3>
+
+<p>
+The bacteria multiply at the site of infection.
+</p>
+
+<h3>Step 4 — Tissue damage</h3>
+
+<p>
+Enzymes and toxins produced by some species can damage tissues and help
+the bacteria spread.
+</p>
+
+<h3>Step 5 — Inflammation</h3>
+
+<p>
+The immune system responds, producing inflammation and often
+<strong>pus formation</strong>.
+</p>
+
+<div class="highlight">
+<strong>S. aureus</strong> is especially important because it can cause
+pyogenic (pus-forming) infections and toxin-mediated diseases.
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DISEASES -->
+
+<section id="diseases" class="section">
+
+<div class="card">
+
+<h2>🩺 Diseases Caused by Staphylococci</h2>
+
+<h3>1. Skin and soft tissue infections</h3>
+
+<ul>
+<li>Abscess</li>
+<li>Furuncle (boil)</li>
+<li>Carbuncle</li>
+<li>Impetigo</li>
+<li>Wound infection</li>
+</ul>
+
+<h3>2. Deep infections</h3>
+
+<ul>
+<li>Pneumonia</li>
+<li>Osteomyelitis</li>
+<li>Endocarditis</li>
+<li>Bacteremia</li>
+<li>Septicemia</li>
+</ul>
+
+<h3>3. Toxin-mediated diseases</h3>
+
+<ul>
+<li>Food poisoning</li>
+<li>Toxic shock syndrome</li>
+<li>Scalded skin syndrome</li>
+</ul>
+
+<h3>Important species</h3>
+
+<table>
+
+<tr>
+<th>Species</th>
+<th>Important association</th>
+</tr>
+
+<tr>
+<td>S. aureus</td>
+<td>Pyogenic infections + toxin-mediated diseases</td>
+</tr>
+
+<tr>
+<td>S. epidermidis</td>
+<td>Medical devices / foreign-body infections</td>
+</tr>
+
+<tr>
+<td>S. saprophyticus</td>
+<td>Urinary tract infection</td>
+</tr>
+
+</table>
+
+<div class="memory">
+🧠 <strong>Remember:</strong><br>
+Aureus → Abscess + toxins<br>
+Epidermidis → Equipment/devices<br>
+Saprophyticus → UTI
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DIAGNOSIS -->
+
+<section id="diagnosis" class="section">
+
+<div class="card">
+
+<h2>🔬 Laboratory Diagnosis</h2>
+
+<div class="flow">
+
+<span>Specimen</span>
+<span class="arrow">→</span>
+<span>Gram stain</span>
+<span class="arrow">→</span>
+<span>Culture</span>
+<span class="arrow">→</span>
+<span>Biochemical tests</span>
+<span class="arrow">→</span>
+<span>Identification</span>
+<span class="arrow">→</span>
+<span>Antibiotic susceptibility</span>
+
+</div>
+
+<h3>1. Specimen</h3>
+
+<p>
+Depending on infection:
+</p>
+
+<ul>
+<li>Pus</li>
+<li>Wound swab</li>
+<li>Blood</li>
+<li>Sputum</li>
+<li>Other appropriate clinical specimens</li>
+</ul>
+
+<h3>2. Gram staining</h3>
+
+<p>
+Shows:
+</p>
+
+<div class="highlight">
+<strong>Gram-positive cocci arranged in clusters.</strong>
+</div>
+
+<h3>3. Culture</h3>
+
+<p>
+Culture on suitable media such as blood agar.
+Mannitol Salt Agar may be useful for selective isolation.
+</p>
+
+<h3>4. Catalase test</h3>
+
+<p>
+<strong>Positive → bubbles.</strong>
+</p>
+
+<h3>5. Coagulase test</h3>
+
+<p>
+A positive result supports identification of
+<strong>S. aureus</strong>.
+</p>
+
+<h3>6. Antibiotic susceptibility testing</h3>
+
+<p>
+Performed to determine antimicrobial sensitivity/resistance.
+Resistance such as <strong>MRSA</strong> is clinically important.
+</p>
+
+<div class="highlight">
+
+<strong>Exam flow:</strong><br><br>
+
+Gram-positive cocci in clusters<br>
+↓<br>
+Catalase positive<br>
+↓<br>
+Staphylococcus<br>
+↓<br>
+Coagulase test<br>
+↓<br>
+Coagulase positive → S. aureus likely
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- QUIZ -->
+
+<section id="quiz" class="section">
+
+<div class="card">
+
+<h2>🧠 Quick Quiz</h2>
+
+<form id="quizForm">
+
+<div class="quiz-question">
+<strong>1. Staphylococci are usually:</strong>
+
+<label>
+<input type="radio" name="q1" value="a">
+A. Gram-negative rods
+</label>
+
+<label>
+<input type="radio" name="q1" value="b">
+B. Gram-positive cocci
+</label>
+
+<label>
+<input type="radio" name="q1" value="c">
+C. Gram-negative cocci
+</label>
+
+<label>
+<input type="radio" name="q1" value="d">
+D. Gram-positive rods
+</label>
+</div>
+
+
+<div class="quiz-question">
+<strong>2. Staphylococci are characteristically arranged in:</strong>
+
+<label>
+<input type="radio" name="q2" value="a">
+A. Chains
+</label>
+
+<label>
+<input type="radio" name="q2" value="b">
+B. Clusters
+</label>
+
+<label>
+<input type="radio" name="q2" value="c">
+C. Tetrads only
+</label>
+
+<label>
+<input type="radio" name="q2" value="d">
+D. Filaments
+</label>
+</div>
+
+
+<div class="quiz-question">
+<strong>3. Staphylococci are usually:</strong>
+
+<label>
+<input type="radio" name="q3" value="a">
+A. Catalase positive
+</label>
+
+<label>
+<input type="radio" name="q3" value="b">
+B. Catalase negative
+</label>
+
+<label>
+<input type="radio" name="q3" value="c">
+C. Oxidase strongly positive
+</label>
+
+<label>
+<input type="radio" name="q3" value="d">
+D. Urease always negative
+</label>
+</div>
+
+
+<div class="quiz-question">
+<strong>4. Coagulase positivity strongly suggests:</strong>
+
+<label>
+<input type="radio" name="q4" value="a">
+A. S. aureus
+</label>
+
+<label>
+<input type="radio" name="q4" value="b">
+B. S. epidermidis
+</label>
+
+<label>
+<input type="radio" name="q4" value="c">
+C. S. saprophyticus
+</label>
+
+<label>
+<input type="radio" name="q4" value="d">
+D. Streptococcus pneumoniae
+</label>
+</div>
+
+
+<div class="quiz-question">
+<strong>5. S. epidermidis is commonly associated with:</strong>
+
+<label>
+<input type="radio" name="q5" value="a">
+A. Malaria
+</label>
+
+<label>
+<input type="radio" name="q5" value="b">
+B. Medical devices
+</label>
+
+<label>
+<input type="radio" name="q5" value="c">
+C. Tuberculosis
+</label>
+
+<label>
+<input type="radio" name="q5" value="d">
+D. Gonorrhoea
+</label>
+</div>
+
+
+<button type="button" class="quiz-btn" onclick="checkQuiz()">
+Check Score
+</button>
+
+<div id="result"></div>
+
+</form>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+Systematic Bacteriology • Unit I • Staphylococci
+</footer>
+
+
+<script>
+
+function showSection(id, button) {
+
+    const sections = document.querySelectorAll(".section");
+
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
+    const buttons = document.querySelectorAll(".tabs button");
+
+    buttons.forEach(btn => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+
+function checkQuiz() {
+
+    const answers = {
+        q1: "b",
+        q2: "b",
+        q3: "a",
+        q4: "a",
+        q5: "b"
+    };
+
+    let score = 0;
+
+    for (let question in answers) {
+
+        const selected = document.querySelector(
+            'input[name="' + question + '"]:checked'
+        );
+
+        if (selected && selected.value === answers[question]) {
+            score++;
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+        "🎯 Your Score: " + score + " / 5";
+
+}
+
+</script>
+
+</body>
+</html>
